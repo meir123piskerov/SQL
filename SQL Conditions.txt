@@ -1,0 +1,54 @@
+Part 1:
+
+1.)
+
+a. SELECT * FROM customers WHERE county like 'USA';
+b. SELECT * FROM customers WHERE county like (Germany or France);
+c. SELECT * FROM `customers` WHERE (country LIKE 'USA') AND (state LIKE 'CA');
+d. SELECT * FROM `customers` WHERE customerName LIKE 'T%' or customerName LIKE 'S%';
+
+2.) 
+a. SELECT * FROM `products` WHERE productLine LIKE '%classic cars%';
+
+3.) 
+a. SELECT * FROM `employees` WHERE jobTitle LIKE 'Sales Rep';
+b. SELECT * FROM `employees` WHERE officeCode IN (1 , 4);
+
+4.)
+a. SELECT * FROM `payments` WHERE amount > 10000;
+b. SELECT * FROM `payments` WHERE paymentDate LIKE '2004-10-19' OR paymentDate LIKE '2005-06-01';
+
+5.)
+a. SELECT * FROM `products` WHERE quantityInStock < 1000 AND buyPrice >50;
+b. SELECT * FROM `products` WHERE productVendor IN ('Min Lin Diecast' , 'Exoto Designs');
+c. SELECT * FROM `products` WHERE MSRP > 100 AND buyPrice <50;
+
+6.)
+
+a. SELECT * FROM `orders` WHERE status in ('Cancelled' , 'on hold');
+b. SELECT * FROM `orders` WHERE orderDate > '2005-01-01' AND status = 'shipped';
+
+
+Part 2:
+
+1.)
+a. SELECT * FROM `customers` WHERE country in ('USA' , 'canada' , 'france');
+b. SELECT * FROM `customers` WHERE country NOT in ('japan' , 'australia' , 'new zealand');
+
+2.)
+a. SELECT * FROM employees WHERE jobTitle NOT IN ('President', 'Manager', 'Sales Rep')
+
+3.)
+a. SELECT * FROM `products` WHERE buyPrice BETWEEN 20 AND 50;
+b. SELECT * FROM `products` WHERE quantityInStock BETWEEN 2000 AND 3000 AND buyPrice NOT BETWEEN 20 AND 45;
+c. SELECT * FROM `products` WHERE MSRP NOT BETWEEN 70 AND 100;
+d. SELECT * FROM `products` WHERE quantityInStock BETWEEN 1000 AND 5000;
+e. SELECT * FROM `products` WHERE productVendor in ('Motor City Art Classics' , 'Welly Diecast Productions');
+
+4.)
+a. SELECT * FROM `orders` WHERE status in ('cancelled' , 'shipped');
+b. SELECT * FROM `orders` WHERE orderNumber in ('10100' ,'10101','10102');
+c. SELECT * FROM `orders` WHERE shippedDate BETWEEN '2003-01-01' AND '2003-12-31';
+
+5.)
+a. SELECT * FROM `offices` WHERE officeCode BETWEEN '1' AND '3' OR officeCode = 7;

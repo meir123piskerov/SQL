@@ -1,0 +1,85 @@
+1.
+ SELECT * FROM `ground_polution` WHERE `Sug tipul` LIKE 'טרם נבדק';
+2.
+ SELECT * FROM `ground_polution` WHERE `Status gas karka` LIKE '%יש חשד%';
+3.
+ SELECT * FROM `ground_polution` WHERE `Peelut mezahemet` LIKE '%כימית%';
+4.
+ SELECT * FROM `ground_polution` WHERE `Peelut mezahemet` LIKE '%מטמנה%';
+5.
+ SELECT * FROM `ground_polution` WHERE `Matzav Minhali` LIKE '%חקירה%';
+6.
+ SELECT * FROM `ground_polution` WHERE `Sug tipul` LIKE '%טרם נבדק%';
+7.
+ SELECT * FROM `ground_polution` WHERE `Moed thilat tipul` > '2009';
+8.
+ SELECT * FROM `ground_polution` WHERE `Moed thilat tipul` IN ('null','');
+9.
+ SELECT * FROM `ground_polution` WHERE `Moed sium tipul` like 'טרם הסתיים';
+10.
+ SELECT * FROM `ground_polution` WHERE `Shem atar rashi` like '%מפעל%';
+11.
+ SELECT * FROM `ground_polution` WHERE `Gush` like '100116';
+12.
+ SELECT * FROM `ground_polution` WHERE `Helka` like '1';
+13.
+ SELECT * FROM `ground_polution` WHERE `Peelut mezahemet` NOT like 'כימית';
+14.
+ SELECT * FROM `ground_polution` WHERE `Status gas karka` NOT like 'לא נבדק ואין חשד';
+15.
+ SELECT * FROM `ground_polution` WHERE `ktuvet` like '%מישור%';
+16. 
+ SELECT * FROM `ground_polution` WHERE `Sug tipul` like 'שאיבת עדשה';
+17.
+ SELECT * FROM `ground_polution` WHERE `Taarich idkun` like '02.08.2022';
+18.
+ SELECT * FROM `ground_polution` WHERE `Peelut mezahemet` like 'זכוכית';
+19.
+ SELECT * FROM `ground_polution` WHERE `Drisha lemigun mivnim` like 'לא';
+20.
+ SELECT * FROM `ground_polution` WHERE `x` > '200000';
+21.
+ SELECT COUNT(*) FROM `ground_polution`; 2260
+22.
+ SELECT COUNT(*) FROM `ground_polution` WHERE Gush = '100116'; 3
+23.
+ SELECT MAX(`X`) FROM `ground_polution`; 277092
+24.
+ SELECT MIN(`y`) FROM `ground_polution`; 382028
+25. 
+ SELECT AVG(`x`) FROM `ground_polution`; 192656.4460
+26.
+ SELECT `Sug tipul` , COUNT(`Shem atar rashi`) FROM `ground_polution` GROUP by `Sug tipul`;
+27.
+ SELECT `Taarich idkun` , COUNT(*) FROM `ground_polution` GROUP by `Taarich idkun` HAVING `Taarich idkun` = '02.08.2022'; 91
+28.
+ SELECT `Matzav Minhali` , COUNT(*) FROM `ground_polution` GROUP by `Matzav Minhali` HAVING `Matzav Minhali` = 'חקירה'; 168
+29. 
+SELECT `Peelut mezahemet` , COUNT(*) FROM `ground_polution` GROUP by `Peelut mezahemet` HAVING `Peelut mezahemet` = 'כימית'; 
+30.
+ SELECT `Status gas karka` , COUNT(*) FROM `ground_polution` GROUP by `Status gas karka` HAVING `Status gas karka` LIKE '%יש חשד%';   
+31.
+ SELECT `Moed thilat tipul` , COUNT(*) FROM `ground_polution` GROUP by `Moed thilat tipul` HAVING `Moed thilat tipul` LIKE ''; 
+32.
+SELECT `Peelut mezahemet` , COUNT(`Shem atar rashi`) as peelut FROM `ground_polution` GROUP by `Peelut mezahemet`;
+33.
+ SELECT Gush,COUNT(*) as total FROM ground_polution GROUP BY Gush
+34. 
+ SELECT COUNT(DISTINCT `Helka`) as total FROM `ground_polution`
+35.
+ SELECT COUNT(DISTINCT `ktuvet`) as total FROM `ground_polution`
+36.
+ SELECT Moed sium tipul,COUNT(*) as total FROM ground_polution WHERE Moed sium tipul = 'טרם הסתיים'
+37.
+ SELECT COUNT(*) FROM ground_polution WHERE Shem atar rashi LIKE '%מישור%'
+38.
+ SELECT Status gas karka,COUNT(*) FROM ground_polution GROUP BY `Shem atar rashi`
+39.
+ SELECT Sug tipul,AVG(Y) FROM ground_polution GROUP BY `Sug tipul`
+40.
+ SELECT * FROM ground_polution WHERE X BETWEEN 180000 and 220000
+
+ 
+ 
+ 
+ 

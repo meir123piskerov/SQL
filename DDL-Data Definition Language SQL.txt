@@ -1,0 +1,55 @@
+1. 
+CREATE DATABASE school
+
+2. 
+CREATE TABLE teachers_backup(
+      id int PRIMARY KEY,
+      Teacher_Name varchar(50),
+      Email varchar(70),
+      Phone varchar(15) 
+)
+
+3.
+ imported all files
+
+4,1.
+ CREATE TABLE study_hours(
+    SELECT * FROM study_hours_extended WHERE classId BETWEEN 1 AND 5
+)
+
+4,2.
+ALTER TABLE lecturers
+ADD Email varchar(70)
+
+5.
+ ALTER TABLE lecturers
+ MODIFY LecturerName varchar(80) not NULL
+
+6.
+ALTER TABLE classes
+DROP status
+
+7.
+DROP TABLE teachers_backup
+
+8.
+CREATE TABLE students( SELECT* FROM students_temp )
+
+9.
+ALTER TABLE students DROP personlId;
+
+10.
+ALTER TABLE students ADD age int CHECK(age <= 10);
+
+11.
+DELETE FROM students WHERE BirthDate < '01/01/1992';
+
+12.
+ALTER TABLE students
+    MODIFY BirthDate varchar(50)
+    CHECK(BETWEEN '01-01-1992' AND '31-12-2000');
+
+13.
+DROP TABLE students_temp;
+ 
+
